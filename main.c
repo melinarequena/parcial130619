@@ -6,15 +6,15 @@ int main() {
     insertar(&list, newNode(1));
     insertar(&list, newNode(2));
     insertar(&list, newNode(3));
+    insertar(&list, newNode(2));
+    insertar(&list, newNode(4));
+    insertar(&list, newNode(64));
+    insertar(&list, newNode(6));
 
     printf("Lista original:\n");
     printear(&list);
 
-    Node * inverted = NULL;
-    insertar(&inverted, invertir(&list));
-    insertar(&inverted, invertir(&list));
-    insertar(&inverted, invertir(&list));
-    printf("Nueva lista invertida\n");
-    printear(&inverted);
+    eliminar(&list);
+    printear(&list);
     return 0;
 }

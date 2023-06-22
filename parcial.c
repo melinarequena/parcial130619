@@ -38,21 +38,35 @@ void printear(Node **cab) {
     }
 }
 
-Node *invertir(Node **cab) {
-    Node * aux = (*cab);
-    Node * ant = NULL;
-    if(aux == NULL){
-        return NULL;
+void eliminar(Node **cab) {
+    if((*cab)== NULL){
+        printf("Lista vacia\n");
     }else{
-        while (aux->next != NULL){
-            ant = aux;
-            aux = aux->next;
+        Node * aux = (*cab);
+        Node * act = NULL;
+        while (aux != NULL){
+            act = (*cab)->next;
+            while(act != NULL){
+                Node * ant = NULL;
+                while (act->data != aux->data){
+                    ant = act;
+                    act = act->next;
+                }
+                if(act->data == aux->data){
+                    if(act->next == NULL){
+                        ant->next = NULL;
+                        free(act);
+                    }else{
+                        ant->next = act->next;
+                        free(act);
+                    }
+                    if(ant->next != NULL){
+                        act = ant->next;
+                    }
+                }
+            }
+            aux = aux ->next;
         }
-        if(ant != NULL){
-            ant->next = NULL;
-        }
-        return aux;
     }
-
-
 }
+

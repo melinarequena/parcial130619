@@ -13,7 +13,6 @@ typedef struct node{
 Node * newNode(int data);
 void insertar(Node ** cab, Node * node);
 void printear(Node ** cab);
-Node * invertir(Node ** cab);
-
+void eliminar(Node ** cab);
 
 #endif //PARCIAL130619_PARCIAL_H
