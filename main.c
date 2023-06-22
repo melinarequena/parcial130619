@@ -2,10 +2,19 @@
 #include "parcial.h"
 
 int main() {
-    char * nom[]={"Sofi", "Meli", "Juani", "Nacho"};
-    int cant = sizeof(nom)/sizeof(char *);
-    for(int i=0; i<cant; i++){
-        printf("%s: %d\n", nom[i], hash(nom[i]));
-    }
+    Node * list = NULL;
+    insertar(&list, newNode(1));
+    insertar(&list, newNode(2));
+    insertar(&list, newNode(3));
+
+    printf("Lista original:\n");
+    printear(&list);
+
+    Node * inverted = NULL;
+    insertar(&inverted, invertir(&list));
+    insertar(&inverted, invertir(&list));
+    insertar(&inverted, invertir(&list));
+    printf("Nueva lista invertida\n");
+    printear(&inverted);
     return 0;
 }

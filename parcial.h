@@ -5,5 +5,15 @@
 #ifndef PARCIAL130619_PARCIAL_H
 #define PARCIAL130619_PARCIAL_H
 
-int hash(char *);
+typedef struct node{
+    int data;
+    struct node * next;
+}Node;
+
+Node * newNode(int data);
+void insertar(Node ** cab, Node * node);
+void printear(Node ** cab);
+Node * invertir(Node ** cab);
+
+
 #endif //PARCIAL130619_PARCIAL_H
